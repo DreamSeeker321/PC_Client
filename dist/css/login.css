@@ -1,0 +1,569 @@
+@charset "UTF-8";
+html, body {
+  min-width: 960px;
+  min-height: 600px;
+  font-size: 12px;
+  font-family: "Microsoft Yahei";
+  background-color: #41b5ff;
+}
+
+input[type=button] {
+  outline: none;
+  border: none;
+}
+
+.loginContent {
+  display: inline-block;
+  position: absolute;
+}
+
+.logo {
+  width: 350px;
+  height: 73px;
+  margin: 0 auto;
+}
+
+.logo span {
+  display: block;
+  width: 112px;
+  height: 27px;
+  margin-left: 50px;
+  overflow: hidden;
+}
+
+.logo span img {
+  width: 100%;
+  height: 100%;
+}
+
+.logo p.exp {
+  margin-left: 175px;
+  font-size: 18px;
+  color: #fff;
+}
+
+div.main {
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 18px 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+div.main .switchWay {
+  height: 46px;
+  position: absolute;
+  top: 16px;
+  right: 6px;
+}
+
+div.main .switchWay .situPassword {
+  display: none;
+}
+
+div.main .switchWay .switch {
+  cursor: pointer;
+}
+
+div.main .section1 .pwTitle {
+  font-size: 16px;
+  margin-top: 40px;
+  margin-bottom: 18px;
+}
+
+div.main .section1 .form {
+  margin: 0 auto;
+}
+
+div.main .section1 .form .user span {
+  display: inline-block;
+  float: left;
+  height: 38px;
+  border: 1px solid #ddd;
+  border-right: 10px;
+}
+
+div.main .section1 .form .user #username {
+  width: 228px;
+  height: 38px;
+  text-indent: 10px;
+  padding: 0;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #ddd;
+  font-family: "Microsoft Yahei";
+}
+
+div.main .section1 .form .password {
+  margin-top: 20px;
+}
+
+div.main .section1 .form .password span {
+  display: inline-block;
+  float: left;
+  height: 38px;
+  border: 1px solid #ddd;
+  border-right: 10px;
+}
+
+div.main .section1 .form .password #password {
+  width: 228px;
+  height: 38px;
+  text-indent: 10px;
+  padding: 0;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #ddd;
+  font-family: "Microsoft Yahei";
+}
+
+div.main .section1 .form #username:focus, div.main .section1 .form #password:focus {
+  border: 1px solid #78cbff;
+}
+
+div.main .section1 .checkbox {
+  height: 50px;
+  line-height: 50px;
+}
+
+div.main .section1 .checkbox label {
+  font-size: 12px;
+}
+
+div.main .section1 .login {
+  margin: 0 auto;
+  position: relative;
+}
+
+div.main .section1 .login #login {
+  height: 40px;
+  width: 269px;
+  background-color: #78cbff;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Microsoft Yahei";
+  line-height: 40px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+div.main .section1 .footer {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+div.main .section1 .footer .selectNet {
+  width: 150px;
+  color: #41b5ff;
+  cursor: pointer;
+  display: inline-block;
+}
+
+div.main .section1 .footer .selectNet span {
+  vertical-align: middle;
+}
+
+div.main .section1 .footer .selectNet .netSet {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+div.main .section1 .footer .netContent {
+  display: none;
+  width: 150px;
+  height: 24px;
+  float: left;
+  border: 1px solid #78cbff;
+  border-top: none;
+  cursor: pointer;
+}
+
+div.main .section1 .footer .netContent span.fl {
+  text-indent: 10px;
+  line-height: 24px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+div.main .section1 .footer .netContent span.fr {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+div.main .section1 .footer .netGroup {
+  display: none;
+  width: 150px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #78cbff;
+}
+
+div.main .section1 .footer .netGroup li {
+  line-height: 24px;
+  text-indent: 10px;
+  cursor: pointer;
+}
+
+div.main .section1 .footer .netGroup li:hover {
+  background-color: #78cbff;
+}
+
+div.main .section2 {
+  display: none;
+}
+
+div.main .section2 .codeTitle {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+div.main .section2 .codeImg {
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.main .section2 .tip {
+  text-align: center;
+  color: #999;
+  margin-top: 30px;
+  font-family: "Microsoft Yahei";
+  font-size: 14px;
+}
+
+div.main .section2 .tip .refresh {
+  vertical-align: middle;
+}
+
+div.main .section2 .loginByPsd {
+  text-align: center;
+  color: #999;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+div.main .section2 .loginByPsd:hover {
+  color: #41B5FF;
+}
+
+.titlebar {
+  height: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+.titlebar .dragbar {
+  display: inline-block;
+  width: 93%;
+  height: 30px;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+
+.titlebar div.maxWin {
+  width: 20px;
+  height: 20px;
+}
+
+.titlebar div.maxWin b.maxWin {
+  display: inline-block;
+  width: 10px;
+  height: 8px;
+  margin: 5px 3px 3px 3px;
+  border: 2px solid gray;
+  content: "";
+}
+
+.titlebar div.maxWin:hover {
+  background-color: #ddd;
+}
+
+b.x {
+  display: inline-block;
+  width: 15px;
+  height: 2px;
+  background: gray;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: -webkit-baseline-middle;
+  -webkit-transform: rotate(45deg);
+}
+
+b.x:after {
+  content: '.';
+  display: block;
+  width: 15px;
+  height: 2px;
+  background: gray;
+  -webkit-transform: rotate(-90deg);
+}
+
+b._ {
+  display: inline-block;
+  width: 12px;
+  height: 2px;
+  background: gray;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: bottom;
+}
+
+div._:hover {
+  background: #ddd;
+}
+
+div.x:hover {
+  background: #e81123;
+}
+
+div.x:hover b.x, div.x:hover b.x:after {
+  background: #fff;
+}
+
+div._,
+div.x {
+  height: 20px;
+  width: 20px;
+  text-align: center;
+}
+
+.netSetBlock {
+  background-color: #fff;
+  line-height: 25px;
+  width: 360px;
+  height: 520px;
+  position: absolute;
+  box-shadow: 0 5px 15px rgba(93, 93, 93, 0.5);
+  display: none;
+}
+
+.netSetBlock .setHead {
+  background-color: #0296F8;
+  color: #333;
+}
+
+.netSetBlock .setHead span.setTitle {
+  font-size: 14px;
+  line-height: 36px;
+  margin-left: 10px;
+}
+
+.netSetBlock .setHead span.setTitle img {
+  vertical-align: sub;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.netSetBlock .setHead span.closeSet {
+  font-size: 18px;
+  line-height: 36px;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.netSetBlock .setBody {
+  padding: 0 20px;
+}
+
+.netSetBlock .setBody > div {
+  width: 260px;
+  margin: 10px auto;
+}
+
+.netSetBlock .setBody > div .net, .netSetBlock .setBody > div .IpAddr {
+  height: 35px;
+}
+
+.netSetBlock .setBody > div .net .left1, .netSetBlock .setBody > div .IpAddr .left1 {
+  display: inline-block;
+  width: 75px;
+}
+
+.netSetBlock .setBody > div .net .left2 input, .netSetBlock .setBody > div .IpAddr .left2 input {
+  font-family: "Microsoft Yahei";
+  font-size: 12px;
+  width: 180px;
+  height: 25px;
+  border: 1px solid #ededed;
+  text-indent: 5px;
+}
+
+.netSetBlock .setBody .port .im1, .netSetBlock .setBody .port .im2 {
+  height: 35px;
+}
+
+.netSetBlock .setBody .port .left1 {
+  display: inline-block;
+  width: 75px;
+}
+
+.netSetBlock .setBody .port .left2 input {
+  font-family: "Microsoft Yahei";
+  font-size: 12px;
+  width: 180px;
+  height: 25px;
+  border: 1px solid #ededed;
+  text-indent: 5px;
+}
+
+.netSetBlock .setBody .checkboxDiv .ssl_checkbox .left1 {
+  display: inline-block;
+  width: 120px;
+}
+
+.netSetBlock .setBody .checkboxDiv .ssl_checkbox .left2 input {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.netSetBlock .setBody .setConfirm {
+  margin-top: 0;
+}
+
+.netSetBlock .setBody .setConfirm input {
+  width: 60px;
+  height: 30px;
+  background-color: #70c3f5;
+  color: #fff;
+  font-family: "Microsoft Yahei";
+  border: none;
+  outline: none;
+  font-size: 14px;
+  line-height: 30px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#updatingAppBack {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background: #fff;
+  text-align: center;
+}
+
+#updatingAppBack #process_title {
+  font-size: 20px;
+  margin-top: 60px;
+  display: block;
+}
+
+#processbar_out {
+  width: 300px;
+  height: 20px;
+  z-index: 999999;
+  position: absolute;
+  text-align: center;
+  border: 1px solid #13c2b6;
+  display: none;
+}
+
+#processbar_out #processbar_in {
+  display: block;
+  height: 100%;
+  width: 60%;
+  background-color: #13c2b6;
+}
+
+#processbar_out #currentProcess {
+  margin-top: -16px;
+  display: block;
+}
+
+/*升级提示*/
+.upgrade {
+  width: 320px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(93, 93, 93, 0.5);
+}
+
+.upgrade .upgradeTitle {
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.upgrade .upgradeTitle p {
+  font-size: 14px;
+}
+
+.upgrade .upgradeTitle .upgradeClose {
+  float: right;
+  color: #999;
+  font-size: 20px;
+  margin-top: -3px;
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 15px;
+}
+
+.upgrade .upgradebody p {
+  font-size: 14px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.upgrade .upgradeFooter {
+  position: relative;
+  height: 50px;
+}
+
+.upgrade .upgradeFooter .btnCancel {
+  width: 96px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  font-family: "微软雅黑";
+  position: absolute;
+  bottom: 20px;
+  right: 172px;
+  background-color: #ff1200;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.upgrade .upgradeFooter .btnConfirm {
+  width: 96px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  font-family: "微软雅黑";
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+  background-color: #6fc3f5;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}

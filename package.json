@@ -1,0 +1,50 @@
+{
+  "name": "协同办公精灵",
+  "version": "20170407",
+  "description": "a client for PC",
+  "main": "login_tmp.html",
+  "window": {
+    "toolbar": false,
+    "min_width": 960,
+    "min_height": 600,
+    "positon": "center",
+    "show_in_taskbar": true,
+    "frame": true,
+    "icon": "appIcon.png"
+  },
+  "dependencies": {
+    "request": "^2.79.0",
+    "request-progress": "^3.0.0",
+    "winreg": "^1.2.3"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "sass": "^0.5.0",
+    "tiny-lr": "^1.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pc_client"
+  ],
+  "author": "Yang",
+  "license": "ISC",
+  "chromium-args" : "--ignore-certificate-errors"
+}

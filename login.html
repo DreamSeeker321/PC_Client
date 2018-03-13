@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/reset.min.css">
+    <link rel="stylesheet" href="dist/css/login.min.css">
+    <link rel="stylesheet" href="dist/css/init.min.css">
+    <title>协同办公精灵</title>
+</head>
+<body>
+<div class="loginContent" >
+	<div class="logo clearfix">
+		<span class="logoImgSpan">
+			<img class='logoImg' alt='logo' src="dist/imgs/login/logo.png">
+		</span>
+		<p class="exp">办公新体验</p>
+	</div>
+	<div class="main">
+		<div class="section1 open">
+			<p class="pwTitle">密码登录</p>
+			<div class="form">
+				<div class="user clearfix">
+					<span><img src="dist/imgs/login/username.png" alt=""></span>
+					<input type="text" id='username' placeholder='请输入用户名'>
+				</div>
+				<div class="password clearfix">
+					<span><img src="dist/imgs/login/username.png" alt=""></span>
+					<input type="password" id='password' autocomplete="new-password"  placeholder='请输入密码'>
+				</div>
+			</div>
+			<div class="checkbox clearfix">
+				<span class='fl'>
+					<input type="checkbox" id='remPassword' >
+					<label for="remPassword">记住密码</label>
+				</span>
+				<span class='fr'>
+					<input type="checkbox" id="autoLogin">
+					<label for="autoLogin">自动登录</label>
+				</span>
+			</div>
+			<div class='login'>
+				<input type="button" value='登录' id='login'>
+			</div>
+			<div class="footer clearfix">
+				<p class='selectNet fl'>
+					<span class='selectMenu'>网址选择</span>
+					<img class='netSet' src="dist/imgs/login/netSet.png">
+					<span style="margin-left:20px" onclick="reset()">重置</span>
+				</p>
+				<p class="netContent">
+					<span class='fl'>网址选择</span>
+					<span class='caret-up fr'></span>
+				</p>
+				<ul  class="netGroup">
+					<li class='ip1'>OA演示地址1</li>
+					<li class='ip2'>OA演示地址2</li>
+					<li class='ip3'>OA演示地址3</li>
+					<li class='ip4 defalutIP'>OA演示地址4</li>
+				</ul>
+				<!-- <p class="forPassword fr" ><a href="">忘记密码</a></p> -->
+			</div>
+		</div>
+		<div class="section2">
+			<p class="codeTitle">手机扫码，安全登录</p>
+			<div class='codeImg'>
+				<img id='codeImg' src="dist/imgs/login/code.png" onerror="imgErr();">
+			</div>
+			<p class='tip'>请使用移动办公扫描二维码登录
+				<span><img class='refresh' src="dist/imgs/login/refresh.png"><a id='refreshImg' href="javascript:void(0)">刷新</a></span>
+			</p>
+			<p class='loginByPsd'>返回密码登录</p>
+		</div>
+		<div class="switchWay">
+			<div class="situCode">
+				<img class='fl' src="dist/imgs/login/codeword.png" >
+				<img class='switch' src="dist/imgs/login/codeway.png">
+			</div>
+			<div class="situPassword">
+				<img class='fl' src="dist/imgs/login/pwword.png" >
+				<img class='switch' class='switch' src="dist/imgs/login/passwordway.png">
+			</div>
+		</div>
+	</div>
+</div>
+<div id="versionDiv" style="position:fixed;bottom:10px;right:10px;color:white"></div>
+<div class="titlebar">
+	<div class="dragbar"></div>
+    <div class="x fr"  title="关闭"> <b class="x" title="关闭"></b>
+    </div>
+</div>
+
+
+<div class="netSetBlock">
+	<div class="setHead clearfix">
+
+		<span class='setTitle fl'><img class='' src="dist/imgs/login/icon_netSet.png" alt="">设置</span>
+		<span class='closeSet fr'>×</span>
+	</div>
+	<div class="setBody">
+		<div class="netSelect1 clearfix">
+			<div class="net clearfix">
+				<span class="fl left1">网络1:</span>
+				<span class="fl left2">
+					<input type="text" placeholder="地址名称">
+				</span>
+			</div>
+			<div class="IpAddr clearfix">
+				<span class="fl left1">IP地址:</span>
+				<span class="fl left2">
+					<input type="text" placeholder="IP,如http://115.28.240.106">
+				</span>
+			</div>
+		</div>
+		<div class="netSelect2 clearfix">
+			<div class="net clearfix">
+				<span class="fl left1">网络2:</span>
+				<span class="fl left2">
+					<input type="text" placeholder="地址名称">
+				</span>
+			</div>
+			<div class="IpAddr clearfix">
+				<span class="fl left1">IP地址:</span>
+				<span class="fl left2">
+					<input type="text" placeholder="IP,如115.28.240.106">
+				</span>
+			</div>
+		</div>
+		<div class="netSelect3 clearfix">
+			<div class="net clearfix">
+				<span class="fl left1">网络3:</span>
+				<span class="fl left2">
+					<input type="text" placeholder="地址名称">
+				</span>
+			</div>
+			<div class="IpAddr clearfix">
+				<span class="fl left1">IP地址:</span>
+				<span class="fl left2">
+					<input type="text" placeholder="IP,如115.28.240.106">
+				</span>
+			</div>
+		</div>
+		<div class="netSelect4 clearfix">
+			<div class="net clearfix">
+				<span class="fl left1">网络4:(默认)</span>
+				<span class="fl left2">
+					<input type="text" readonly="true" value="演示地址">
+				</span>
+			</div>
+			<div class="IpAddr clearfix">
+				<span class="fl left1">IP地址:</span>
+				<span class="fl left2">
+					<input type="text" readonly="true" value="115.28.240.106">
+				</span>
+			</div>
+		</div>
+
+		<div class="port">
+			<div class="im1 clearfix">
+				<span class="fl left1">IM地址:</span>
+				<span class="fl left2">
+					<input type="text" placeholder="非集群模式一般无需填写">
+				</span>
+			</div>
+			<div class="im2 clearfix" style="display:none">
+				<span class="fl left1">IM端口:</span>
+				<span class="fl left2">
+					<input type="text" placeholder="端口:如9090，不写默认9090">
+				</span>
+			</div>
+		</div>
+
+		<div class='checkboxDiv clearfix'>
+			<div class="ssl_checkbox clearfix">
+				<span class="fl left1">SSL加密(使用https):</span>
+				<span class="fl left2">
+					<input type="checkbox">
+				</span>
+			</div>
+		</div>
+
+		<div class="setConfirm">
+			<input type="button" value='确定'>
+		</div>
+
+
+
+	</div>
+</div>
+<div hidden id="updatingAppBack">
+	<span id="process_title">正在更新请稍后...</span>
+</div>
+<div hidden id='processbar_out' class='processbar_out'>
+	<span id="processbar_in"></span>
+	<span id='currentProcess'></span>
+</div>
+
+
+<!-- 升级 -->
+<div hidden class="upgrade">
+	<div class="upgradeTitle clearfix">
+		<p>版本升级</p>
+		<span class='upgradeClose'>×</span>
+	</div>
+	<div class="upgradebody clearfix">
+		<p>当前版本不是最新版本,是否升级？</p>
+	</div>
+	<div class="upgradeFooter clearfix">
+		<input class='btnCancel' type="button" value='取消'>
+		<input class="btnConfirm" type="button" value='确定'>
+	</div>
+</div>
+
+
+</body>
+<script type="text/javascript" src='src/js/jquery.min.js'></script>
+<script type="text/javascript" src='src/js/login.js'></script>
+</html>

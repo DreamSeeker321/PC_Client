@@ -1,0 +1,2 @@
+[0409/153616:WARNING:pe_image_reader.cc(144)] CodeView debug entry of unexpected size in C:\WINDOWS\system32\OLEACC.dll
+[0409/153616:WARNING:pe_image_reader.cc(161)] encountered non-7.0 CodeView debug record in C:\WINDOWS\system32\msacm32.drv

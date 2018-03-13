@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+	<script type="text/javascript">
+var gui, win ,index_win= null;
+if (typeof(require) != 'undefined') {
+    gui = require('nw.gui');
+    win = gui.Window.get();
+}
+ 		gui.Window.get(
+			nw.Window.open("./login.html",{
+		        "min_width": 960,
+		        "min_height": 600,
+		        "frame":false
+		    },function(new_win){
+				win.close();
+	    	})
+			);
+	</script>
+</body>
+</html>

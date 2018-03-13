@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/*左浮动*/
+.fl {
+  float: left;
+}
+
+/*右浮动*/
+.fr {
+  float: right;
+}
+
+/*清楚浮动  防止在浮动元素父级*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+/*下拉三角*/
+.caret-down {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-top: 10px;
+  margin-left: 3px;
+  vertical-align: top;
+  border-top: 4px solid #000;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+}
+
+.caret-up {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-top: 6px;
+  vertical-align: top;
+  border-bottom: 4px solid #000;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+}
+
+.caret-right {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-top: 6px;
+  vertical-align: top;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-left: 4px solid #000;
+  content: "";
+}
+
+.caret-left {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-top: 6px;
+  vertical-align: top;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-right: 4px solid #000;
+  content: "";
+}
+
+/*页面*/
+html, body {
+  font-family: "Microsoft Yahei","微软雅黑";
+}
+
+/*点击状态*/
+.setActive {
+  color: #0296f8;
+}
+
+/*滚动条*/
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(200, 200, 200, 0.6);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track-piece {
+  background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(200, 200, 200, 0.6);
+  border-radius: 10px;
+}

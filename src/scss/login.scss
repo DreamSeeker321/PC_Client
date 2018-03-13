@@ -1,0 +1,516 @@
+$MY : "Microsoft Yahei";
+@mixin btn($width,$height,$bgc,$right,$bottom){
+	width: $width;
+	height: $height;
+	display: inline-block;
+	text-align: center;
+	line-height: $height;
+	color:#fff;
+	font-family:"微软雅黑";
+	position: absolute;
+	bottom:$bottom;
+	right:$right;
+	background-color: $bgc;
+	cursor: pointer;
+	outline:none;
+	border:none;
+}
+html,body{
+	min-width:960px;
+	min-height:600px;
+	font-size:12px;
+	font-family:$MY;
+	background-color:#41b5ff;
+}
+input[type=button]{
+  outline:none;
+  border:none;
+}
+.loginContent{
+	display: inline-block;
+	position: absolute;
+}
+.logo{
+	width:350px;
+	height:73px;
+	margin:0 auto;
+	span{
+		display: block;
+		width: 112px;
+		height: 27px;
+		margin-left: 50px;
+		overflow: hidden;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	p.exp{
+		margin-left: 175px;
+		font-size: 18px;
+		color:#fff;
+	}
+}
+div.main{
+	width: 350px;
+	height: 350px;
+	margin:0 auto;
+	background-color: #fff;
+	padding: 18px 40px;
+	box-sizing:border-box;
+	position: relative;
+	.switchWay{
+		height: 46px;
+		position:absolute;
+		top:16px;
+		right: 6px;
+		.situCode{
+
+		}
+		.situPassword{
+			display: none;
+		}
+		.switch{
+			cursor:pointer;
+		}
+	}
+	.section1{
+		.pwTitle{
+			font-size:16px;
+			margin:{
+				top:40px;
+				bottom:18px;
+			}
+		}
+		.form{
+			margin:0 auto;
+			@mixin input{
+				width: 228px;
+				height: 38px;
+				text-indent:10px;
+				padding:0;
+				font-size: 16px;
+				outline:none;
+				border:1px solid #ddd;
+				font-family: $MY;
+			}
+			.user{
+				span{
+					display: inline-block;
+					float: left;
+					height: 38px;
+					border:1px solid #ddd;
+					border-right: 10px;
+				}
+				 #username{
+					@include input;
+					// background: url(../imgs/login/username.png) left center no-repeat;
+				 }
+
+			}
+			.password{
+			 	margin-top:20px;
+			 	span{
+					display: inline-block;
+					float: left;
+					height: 38px;
+					border:1px solid #ddd;
+					border-right: 10px;
+				}
+				 #password{
+				 	@include input;
+					// background: url(../imgs/login/password.png) left center no-repeat;
+				 }
+
+			}
+			 #username:focus,#password:focus{
+				border:1px solid #78cbff;
+			 }
+		}
+		.checkbox{
+			height:50px;
+			line-height: 50px;
+			label{
+				font-size: 12px;
+			}
+		}
+		.login{
+			margin:0 auto;
+			position: relative;
+		#login{
+			height:40px;
+			width: 269px;
+			background-color: #78cbff;
+			color:#fff;
+			font-size: 16px;
+			font-family:$MY;
+			line-height:40px;
+			text-align:center;
+			margin:0 auto;
+			cursor: pointer;
+		}
+		}
+		.footer{
+			position: relative;
+			margin:0 auto;
+			margin-top:40px;
+			.selectNet{
+				width: 150px;
+				color:#41b5ff;
+				cursor: pointer;
+				display: inline-block;
+				span{
+					vertical-align: middle;
+				}
+				.netSet{
+					margin-left:10px;
+					vertical-align: middle;
+				}
+			}
+			.netContent{
+				display: none;
+				width:150px;
+				height: 24px;
+				float: left;
+				border:1px solid #78cbff;
+				border-top: none;
+				cursor: pointer;
+				span.fl{
+					text-indent: 10px;
+					line-height: 24px;
+					display: inline-block;
+					font-size: 12px;
+				}
+				span.fr{
+					margin:{
+						top: 10px;
+						right: 10px;
+					}
+				}
+			}
+			.netGroup{
+				display: none;
+				width:150px;
+				position: absolute;
+				bottom:100%;
+				left: 0;
+				right:0;
+				background-color: #fff;
+				border:1px solid #78cbff;
+				li{
+					line-height: 24px;
+					text-indent: 10px;
+					cursor: pointer;
+				}
+				li:hover{
+					background-color: #78cbff;
+				}
+			}
+		}
+
+	}
+	.section2{
+		display: none;
+		.codeTitle{
+			font-size: 16px;
+			text-align: center;
+			margin-top:40px;
+			margin-bottom: 20px;
+		}
+		.codeImg{
+			margin:0 auto;
+			text-align: center;
+		}
+		.tip{
+			text-align: center;
+			color:#999;
+			margin-top: 30px;
+			font-family: $MY;
+			font-size: 14px;
+			.refresh{
+				vertical-align: middle;
+			}
+		}
+		.loginByPsd{
+			text-align: center;
+			color:#999;
+			margin-top:20px;
+			cursor: pointer;
+		}
+		.loginByPsd:hover{
+			color:#41B5FF;
+		}
+	}
+}
+.titlebar{
+	height:30px;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding:{
+		top: 5px;
+		right:5px;
+	}
+	.dragbar{
+		display: inline-block;
+		width: 93%;
+		height: 30px;
+		-webkit-user-select:none;
+		-webkit-app-region:drag;
+	}
+	div.maxWin{
+		width: 20px;
+		height: 20px;
+		b.maxWin{
+			display: inline-block;
+			width: 10px;
+			height: 8px;
+			margin: 5px 3px 3px 3px;
+			border:2px solid gray;
+			content: "";
+		}
+	}
+	div.maxWin:hover{
+		background-color: #ddd;
+	}
+
+}
+b.x {
+    display: inline-block;
+    width: 15px;
+    height: 2px;
+    background: gray;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: -webkit-baseline-middle;
+    -webkit-transform: rotate(45deg);
+}
+b.x:after {
+    content: '.';
+    display: block;
+    width: 15px;
+    height: 2px;
+    background: gray;
+    -webkit-transform: rotate(-90deg);
+}
+b._ {
+    display: inline-block;
+    width: 12px;
+    height: 2px;
+    background: gray;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: bottom;
+}
+div._:hover{
+    background: #ddd;
+    b._{
+
+    }
+}
+div.x:hover{
+	 background: #e81123;
+	 b.x,b.x:after{
+	 	background: #fff;
+	 }
+}
+div._,
+div.x {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+}
+.netSetBlock{
+	background-color: #fff;
+	line-height: 25px;
+	width: 360px;
+	height: 520px;
+	position: absolute;
+	box-shadow: 0 5px 15px rgba(93, 93, 93, 0.5);
+	display: none;
+	.setHead{
+		background-color:#0296F8;
+		color:#333;
+		span.setTitle{
+			font-size: 14px;
+			line-height:36px;
+			margin-left: 10px;
+			img{
+				vertical-align: sub;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+		}
+		span.closeSet{
+			font-size: 18px;
+			line-height: 36px;
+			color: #fff;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+	}
+	.setBody{
+		padding:0 20px;
+		>div{
+			width: 260px;
+			margin:10px auto;
+			.net,.IpAddr{
+				height: 35px;
+				.left1{
+					display: inline-block;
+					width: 75px;
+				}
+				.left2{
+					input{
+						font-family: "Microsoft Yahei";
+						font-size: 12px;
+						width: 180px;
+						height: 25px;
+						border:1px solid #ededed;
+						text-indent: 5px;
+					}
+				}
+			}
+
+
+		}
+		.port{
+			.im1,.im2{
+				height: 35px;
+			}
+			.left1{
+				display: inline-block;
+				width: 75px;
+			}
+			.left2{
+				input{
+					font-family: "Microsoft Yahei";
+					font-size: 12px;
+					width: 180px;
+					height: 25px;
+					border:1px solid #ededed;
+					text-indent: 5px;
+				}
+			}
+		}
+		.checkboxDiv{
+			.ssl_checkbox{
+				.left1{
+					display: inline-block;
+					width: 120px;
+				}
+				.left2{
+					input{
+						display: inline-block;
+						width: 16px;
+						height: 16px;
+					}
+				}
+			}
+		}
+		.setConfirm{
+			margin-top: 0;
+			input{
+				width: 60px;
+				height: 30px;
+				background-color: #70c3f5;
+				color: #fff;
+				font-family: "Microsoft Yahei";
+				border:none;
+				outline: none;
+				font-size: 14px;
+				line-height: 30px;
+				display: block;
+				margin: 0 auto;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+#updatingAppBack{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99999;
+	// opacity: 0.2;
+	background: #fff;
+	text-align: center;
+	#process_title{
+		font-size: 20px;
+		margin-top: 60px;
+		display: block;
+	}
+}
+#processbar_out{
+	width:300px;
+	height:20px;
+	z-index: 999999;
+	position: absolute;
+	text-align:center;
+	border:1px solid #13c2b6;
+	display: none;
+	#processbar_in{
+		display: block;
+		height: 100%;
+		width:60%;
+		background-color: #13c2b6;
+	}
+	#currentProcess{
+		margin-top: -16px;
+		display: block;
+	}
+}
+/*升级提示*/
+.upgrade {
+	width: 320px;
+	height: 200px;
+	border:1px solid #ccc;
+	border-radius:5px;
+	position: absolute;
+	background: #fff;
+	box-shadow: 0 5px 15px rgba(93, 93, 93, 0.5);
+	.upgradeTitle{
+		height: 48px;
+		line-height: 48px;
+		text-align: center;
+		border:1px solid #f0f0f0;
+		position: relative;
+		p{
+			font-size: 14px;
+		}
+		.upgradeClose{
+			float: right;
+			color:#999;
+			font-size: 20px;
+			margin-top: -3px;
+			cursor: pointer;
+			position: absolute;
+			top: 2px;
+			right:15px;
+		}
+	}
+	.upgradebody{
+		p{
+			font-size: 14px;
+			margin:40px auto;
+			text-align: center;
+		}
+	}
+	.upgradeFooter{
+		position: relative;
+		height: 50px;
+		.btnCancel{
+			@include btn(96px,30px,#ff1200,172px,20px);
+		}
+		.btnConfirm{
+			@include btn(96px,30px,#6fc3f5,50px,20px);
+		}
+	}
+
+}

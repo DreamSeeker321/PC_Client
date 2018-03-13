@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/reset.css">
+    <link rel="stylesheet" href="dist/css/init.css">
+    <link rel="stylesheet" href="dist/css/index.css">
+    <link rel="stylesheet" href="dist/css/input.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/loader.css">
+    <link rel="stylesheet" href="dist/css/multi-switch.css">
+    <title>PC协同办公</title>
+</head>
+<body>
+<audio hidden id="news_audio" src="./news.wav">
+    您的浏览器不支持播放声音
+</audio>
+<audio hidden id="chat_audio" src="./chat.wav">
+    您的浏览器不支持播放声音
+</audio>
+<header>
+    <div class="drag"></div>
+    <div class="logoBlock">
+        <!-- <img draggable="false"  class='logo' src="dist/imgs/index/logo.png"> -->
+        <span class="name">中腾OA</span>
+        <div class='wins fr'>
+            <div class="_" title="最小化"><b class="_"></b></div>
+            <div class="maxWin" title="最大化"><b class="maxWin"></b></div>
+            <div class="x" title="关闭"><b class="x" title="关闭"></b>
+            </div>
+        </div>
+        <input type="text" class='search' placeholder="流程、任务、用户、计划、客户等">
+    </div>
+    <div class="searchBlock">
+        <span class="caret-new"></span>
+        <iframe src="" frameborder="0"></iframe>
+    </div>
+</header>
+<section>
+    <aside class="menuBar">
+        <div class="avatar">
+            <img draggable="false" src="dist/imgs/index/app/person.png" alt="头像" id='avatar' class="myAvatar">
+            <div class="avatar">
+                <div class="myInfo">
+                    <div class="avatarBlock clearfix">
+                        <div class="avatar">
+                            <img draggable="false" src="dist/imgs/index/apps/person.png" class="myAvatar">
+                        </div>
+                        <div class="info">
+                            <p class="personName"></p>
+                            <p class="personPos"></p>
+                        </div>
+                        <span class='closeMyInfo'>×</span>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>姓名</td>
+                            <td style='width:20px;'></td>
+                            <td class='personNameDetail'></td>
+                        </tr>
+                        <tr>
+                            <td>性别</td>
+                            <td style='width:20px;'></td>
+                            <td class="personSex"></td>
+                        </tr>
+                        <tr>
+                            <td>部门</td>
+                            <td style='width:20px;'></td>
+                            <td class='personPos'></td>
+                        </tr>
+                        <tr>
+                            <td>职位</td>
+                            <td style='width:20px;'></td>
+                            <td class='posName'></td>
+                        </tr>
+                        <tr>
+                            <td>手机</td>
+                            <td style='width:20px;'></td>
+                            <td class="tele"></td>
+                        </tr>
+                        <tr>
+                            <td>邮箱</td>
+                            <td style='width:20px;'></td>
+                            <td class='personEmail'></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <ul class='menuList'>
+            <li class="menuItem messageBtn">
+                <img draggable="false" src="dist/imgs/index/message.png" alt="" title="消息">
+            </li>
+            <li class="menuItem contactBtn">
+                <img draggable="false" src="dist/imgs/index/contact.png" alt="" title="组织架构">
+            </li>
+            <li class="menuItem emailBtn">
+                <span class="badge badge-email"></span>
+                <img draggable="false" src="dist/imgs/index/mail.png" alt="" title="邮件">
+            </li>
+            <li class="menuItem newBtn">
+                <span class="badge badge-news"></span>
+                <img draggable="false" src="dist/imgs/index/new.png" alt="" title="新闻">
+            </li>
+            <li class="menuItem noticeBtn">
+                <span class="badge badge-notify"></span>
+                <img draggable="false" src="dist/imgs/index/notice.png" alt="" title="公告">
+            </li>
+            <li class="menuItem todoBtn">
+                <span class="badge badge-workflow "></span>
+                <img draggable="false" src="dist/imgs/index/todo.png" alt="" title="工作待办">
+            </li>
+
+
+            <li class="menuItem appCenter">
+                <img draggable="false" src="dist/imgs/index/app.png" alt="" title="应用中心">
+            </li>
+
+        </ul>
+        <div class='leftDown'>
+            <ul class='leftDownList'>
+                <li class="menuItem sign"><img draggable="false" src="dist/imgs/index/time.png" alt="" title="签到"></li>
+                <li class="menuItem add"><img draggable="false" src="dist/imgs/index/add.png" alt="" title="创建聊天"></li>
+                <ul class='addList'>
+                    <li class="addItem createSingleChat">发起聊天</li>
+                    <li class="addItem addGpChat">群组聊天</li>
+                    <!-- <li class="addItem">视频</li> -->
+                    <!-- <li class="addItem">语音</li> -->
+                    <span class="caret-new"></span>
+                </ul>
+                <li class='set' title="设置"><img draggable="false" src="dist/imgs/index/more.png" alt=""></li>
+                <ul class='setList'>
+                    <li class="setItem setting">设置</li>
+                    <!-- <li class="setItem">下载客户端</li> -->
+                    <!-- <li class="setItem">帮助</li> -->
+                    <li class="setItem toLogout">注销</li>
+                    <li class="setItem quitApp">退出</li>
+                    <span class="caret-new"></span>
+                </ul>
+            </ul>
+        </div>
+        <p class="onlineNumberWrap"><span class="onlineNumber"></span>人在线</p>
+    </aside>
+    <article class="main">
+        <ul hidden class="dialogList">
+            <li class="diaItem transaction">
+                <div class="avatar">
+                    <img draggable="false" src="dist/imgs/index/apps/shiwu.png" alt="">
+                </div>
+                <div class="diaContent sms allNews">
+                    <div class="diaTop clearfix">
+                        <span class="diaName">消息事务</span>
+                        <span class="diaTime">14:20</span>
+                    </div>
+                    <div class="diaDown clearfix">
+                        <p class='fl'>点击查看待办详细信息...</p>
+                        <span class='indicator badge-SMS_TOTAL fr'>99</span>
+                    </div>
+                </div>
+            </li>
+            <div class="chats">
+
+            </div>
+        </ul>
+
+        <ul class="contactList">
+            <li class="contactItem org">
+                <div class="head clearfix">
+                    <div class="icon">
+                        <img draggable="false" src="dist/imgs/index/apps/org.png" alt="">
+                    </div>
+                    <p class="title">组织架构</p>
+                    <span class="caret-right caret-set"></span>
+                    <span class="border"></span>
+                </div>
+
+            </li>
+            <li class="contactItem group">
+                <div class="head clearfix">
+                    <div class="icon">
+                        <img draggable="false" src="dist/imgs/index/apps/group.png" alt="">
+                    </div>
+                    <p class="title">群组</p>
+                    <span class="caret-right caret-set"></span>
+                    <span class="border"></span>
+                </div>
+                <ul class="body">
+
+                    <span class="border"></span>
+                </ul>
+            </li>
+            <li class="contactItem ctBlock">
+                <div class="head clearfix">
+                    <div class="icon">
+                        <img draggable="false" src="dist/imgs/index/apps/address.png" alt="">
+                    </div>
+                    <p class="title">通讯录</p>
+                    <span class="caret-right caret-set"></span>
+                    <span class="border"></span>
+                </div>
+                <div class="body ctList_fixed">
+                    <ul class="abc">
+                        <li>A</li>
+                        <li>B</li>
+                        <li>C</li>
+                        <li>D</li>
+                        <li>E</li>
+                        <li>F</li>
+                        <li>G</li>
+                        <li>H</li>
+                        <li>I</li>
+                        <li>G</li>
+                        <li>K</li>
+                        <li>L</li>
+                        <li>M</li>
+                        <li>N</li>
+                        <li>O</li>
+                        <li>P</li>
+                        <li>Q</li>
+                        <li>R</li>
+                        <li>S</li>
+                        <li>T</li>
+                        <li>U</li>
+                        <li>V</li>
+                        <li>W</li>
+                        <li>X</li>
+                        <li>Y</li>
+                        <li>Z</li>
+                    </ul>
+                    <div class='scrollContent'>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="appList"></ul>
+
+        <div id="mainContent">
+            <div class="dialogContent">
+                <div class="dgTitle">
+                    <div class="avatar">
+                        <img draggable="false" onerror="this.src='dist/imgs/index/apps/person.png'"
+                             src="dist/imgs/index/apps/person.png">
+                    </div>
+                    <div class="dialogInfo">
+                        <p class="dialogName"></p>
+                        <p class='signature'>个性签名</p>
+                    </div>
+                    <div class="groupSet">
+                        <img draggable="false" src="dist/imgs/index/more.png">
+                    </div>
+                </div>
+                <div class="dgbody">
+                    <!-- 			<div class="receivedMsg clearfix" >
+                                    <div class="avatar">
+                                        <img draggable="false"  src="dist/imgs/index/app/person.png" alt="">
+                                    </div>
+                                    <span class="caret-left"></span>
+                                    <div class="receivedMsgCont">
+                                        <div class="voice">
+                                            <span class="voiceDuration"></span>
+                                            <img src="dist/imgs/index/voice_rec.png" alt="">
+                                        </div>
+                                        <audio hidden class="voiceSend" src=""></audio>
+                                    </div>
+                                </div> -->
+                    <!-- 		<div id="msgId" class="sendMsg clearfix">
+                              <div class="avatar">
+                                  <img  draggable="false" src="dist/imgs/index/app/person.png">
+                              </div>'
+                              <span class='caret-right'></span>
+                              <div class="sendMsgCont">
+                                  <div class="voice">
+                                      <img src="dist/imgs/index/voice_send.png" alt="">
+                                      <span class="voiceDuration">5s</span>
+                                  </div>
+                                  <audio hidden class="voiceSend" src=""></audio>
+                             </div>
+                         </div> -->
+                </div>
+                <div class="dgfooter">
+                    <div class="sendToolbar">
+                        <ul>
+                            <li class="sendItem sendImg" title="图片">
+                                <img draggable="false" src="dist/imgs/index/toolbar/icon_img.png" alt="">
+                            </li>
+                            <form hidden class="formData imgForm">
+                                <input accept="image/png,image/*" type="file" name='file'>
+                            </form>
+                            <li class="sendItem emoji" id="emoji">
+                                <img draggable="false" title="表情" src="dist/imgs/index/toolbar/icon_emo.png" alt="">
+                            </li>
+                            <li class="sendItem sendFile" title="文件">
+                                <img draggable="false" src="dist/imgs/index/toolbar/icon_attach.png" alt="">
+                            </li>
+                            <form hidden class="formData fileForm">
+                                <input type="file" name='file'>
+                            </form>
+                            <li class="sendItem shortCut" title="截图">
+                                <img draggable="false" src="dist/imgs/index/toolbar/icon_shortcut.png" alt="">
+                            </li>
+                            <form hidden class="formData shortCutForm">
+                                <input type="file" name='file'>
+                            </form>
+                            <!-- <li class="sendItem audio sendVoice" title="语音">
+                                <img draggable="false"  src="dist/imgs/index/toolbar/icon_audio.png" alt="">
+                                <div hidden class="toSendAudio">
+                                    <img draggable="false"  src="dist/imgs/index/toolbar/audio.png" alt="">
+                                    <p>松开取消</p>
+                                </div>
+                            </li> -->
+                            <form hidden class="formData voiceForm">
+                                <input type="file" name='file'>
+                            </form>
+                            <!-- <li class="sendItem" title="视频">
+                                <img draggable="false"  src="dist/imgs/index/toolbar/icon_video.png" alt="">
+                            </li> -->
+                            <!-- <li class="sendItem" title="位置">
+                                <img draggable="false"  src="dist/imgs/index/toolbar/icon_gps.png" alt="">
+                            </li> -->
+                            <form hidden class="formData ">
+                                <input type="file" name='file'>
+                            </form>
+                            <!-- <li class="sendItem" title="邮件">
+                                <img draggable="false"  src="dist/imgs/index/toolbar/icon_mail.png" alt="">
+                            </li>
+                            <li class="sendItem toContact" title="通讯簿">
+                                <img draggable="false"  src="dist/imgs/index/toolbar/icon_contact.png" alt="">
+                            </li> -->
+                        </ul>
+                        <!-- <span class='fr chatLog'>聊天记录</span> -->
+                    </div>
+                    <div contenteditable="true" class="textInput"></div>
+                    <!-- <textarea id='messageArea' name="txtInput"  cols="30" rows="10"></textarea> -->
+                    <div class="dgBtn">
+                        <input type="button" value='发送'>
+                    </div>
+                </div>
+                <ul class="dgMsgMenu">
+                    <li class="menuItem revoke">撤回</li>
+                    <li hidden class="menuItem sendAginMenuItem">重新发送</li>
+                </ul>
+                <div class="dgSetContent">
+                    <div class="dgSetTitle">
+                        <p>群设置</p>
+                        <span class="closeDgSet">×</span>
+                    </div>
+                    <div class="dgSetBody">
+                        <ul class="memberList clearfix">
+                            <span class='master'>
+                                <img draggable="false" src="dist/imgs/index/master.png" alt="">
+                            </span>
+                        </ul>
+                        <div class="groupName">
+                            <div class="groupNameTitle">群名称:</div>
+                            <div class="groupNameContent">该群无名称</div>
+                            <img class="toEdit" src="/dist/imgs/index/toEdit.png" alt="修改群名称">
+                        </div>
+                        <div class="groupNotice">
+                            <div class="groupNoticeTitle">群公告:</div>
+                            <div class="groupNoticeContent">该群暂无公告</div>
+                            <img class="toEdit" src="/dist/imgs/index/toEdit.png" alt="修改群公告">
+                        </div>
+                        <div class="clearhistory">
+                            <div class="clearName">删除群记录:</div>
+                            <div class="clearbtn"><a href="javascript:void(0)">清除</a></div>
+                        </div>
+                    </div>
+                    <div class="delGroup">
+                        <input type="button" value="解散群">
+                    </div>
+                </div>
+            </div>
+
+            <div class="orgStructure">
+                <div class="orgTitle">
+                    <p class='orgTitleName'>组织架构</p>
+                </div>
+                <div class="orgBody">
+                    <ul class='orgList orgList-0'>
+
+                    </ul>
+                </div>
+                <div class="personInfo">
+                    <div class="avatarBlock clearfix">
+                        <div class="avatar">
+                            <img draggable="false" src="dist/imgs/index/apps/person.png">
+                        </div>
+                        <div class="info">
+                            <p class="personName"></p>
+                            <p class="personPos"></p>
+                        </div>
+                        <span class='closePerInfo'>×</span>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>姓名</td>
+                            <td style='width:20px;'></td>
+                            <td class='personNameDetail'></td>
+                        </tr>
+                        <tr>
+                            <td>性别</td>
+                            <td style='width:20px;'></td>
+                            <td class="personSex"></td>
+                        </tr>
+                        <tr>
+                            <td>部门</td>
+                            <td style='width:20px;'></td>
+                            <td class='personPos'></td>
+                        </tr>
+                        <tr>
+                            <td>职位</td>
+                            <td style='width:20px;'></td>
+                            <td class='posName'></td>
+                        </tr>
+                        <tr>
+                            <td>手机</td>
+                            <td style='width:20px;'></td>
+                            <td class="tele"></td>
+                        </tr>
+                        <tr>
+                            <td>邮箱</td>
+                            <td style='width:20px;'></td>
+                            <td class='personEmail'></td>
+                        </tr>
+                    </table>
+                    <!-- <div class="btns">
+                        <input type="button" value='发消息'>
+                        <input type="button" value='打电话'>
+                        <input type="button" value='发邮件'>
+                    </div> -->
+                </div>
+            </div>
+            <!--  -->
+
+            <div class="contactDetail">
+                <div class="contactBlock">
+                    <div class="detailAvatar">
+                        <img draggable="false" src="dist/imgs/index/apps/person.png">
+                    </div>
+                    <p class="contactName">
+                        <img draggable="false" src="dist/imgs/index/contact/male.png" alt="">
+                    </p>
+                    <table>
+                        <tr>
+                            <td>姓名</td>
+                            <td style='width:23px;'></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>性别</td>
+                            <td style='width:23px;'></td>
+                            <td>男</td>
+                        </tr>
+                        <tr>
+                            <td>部门</td>
+                            <td style='width:23px;'></td>
+                            <td>产品部</td>
+                        </tr>
+                        <tr>
+                            <td>职位</td>
+                            <td style='width:23px;'></td>
+                            <td>java开发工程师</td>
+                        </tr>
+                        <tr>
+                            <td>手机</td>
+                            <td style='width:23px;'></td>
+                            <td>13354675138</td>
+                        </tr>
+                        <tr>
+                            <td>邮箱</td>
+                            <td style='width:23px;'></td>
+                            <td>1234567890@qq.com</td>
+                        </tr>
+                    </table>
+                    <div class="btns clearfix">
+                        <input class="sendEmail" type="button" value="发邮件">
+                        <input class="sendChat" type="button" value="发起聊天">
+                        <input class="makeCall" type="button" value="打电话">
+                    </div>
+                </div>
+            </div>
+
+            <div hidden class="groupContent">
+                <div class="groupTitle">
+                    <p class='orgTitleName'>项目群组</p>
+                </div>
+                <div class="groupBody">
+                    <ul class="avatarList clearfix">
+                        <li>
+                            <div class="avatar">
+                                <img draggable="false" src="dist/imgs/index/app/person.png">
+                            </div>
+                            <p class="name"></p>
+                        </li>
+                        <li>
+                            <div class="avatar">
+                                <img draggable="false" src="dist/imgs/index/app/person.png">
+                            </div>
+                            <p class="name"></p>
+                        </li>
+                        <li>
+                            <div class="avatar">
+                                <img draggable="false" src="dist/imgs/index/avatar_demo.png">
+                            </div>
+                            <p class="name"></p>
+                        </li>
+                        <li>
+                            <div class="avatar">
+                                <img draggable="false" src="dist/imgs/index/avatar_demo.png">
+                            </div>
+                            <p class="name"></p>
+                        </li>
+                        <li>
+                            <div class="avatar">
+                                <img draggable="false" src="dist/imgs/index/avatar_demo.png">
+                            </div>
+                            <p class="name"></p>
+                        </li>
+                        <li>
+                            <div class="avatar">
+                                <img draggable="false" src="dist/imgs/index/avatar_demo.png">
+                            </div>
+                            <p class="name"></p>
+                        </li>
+                        <li>
+                            <div class="avatar">
+                                <img draggable="false" src="dist/imgs/index/avatar_demo.png">
+                            </div>
+                            <p class="name"></p>
+                        </li>
+                        <li>
+                            <div class="avatar">
+                                <img draggable="false" src="dist/imgs/index/avatar_demo.png">
+                            </div>
+                            <p class="name"></p>
+                        </li>
+                        <li>
+                            <div class="avatar">
+                                <img draggable="false" src="dist/imgs/index/avatar_demo.png">
+                            </div>
+                            <p class="name"></p>
+                        </li>
+                    </ul>
+                    <div class="btns clearfix">
+                        <input class="sendEmail" type="button" value="群发邮件">
+                        <input class="sendChat" type="button" value="发起聊天">
+                        <input class="makeCall" type="button" value="群通话">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </article>
+</section>
+<footer></footer>
+
+<!-- 模态框部分 -->
+<!-- 设置 -->
+<div class="setBlock">
+    <div class="setTitle">
+        <img draggable="false" src="dist/imgs/index/icon_set.png" alt="" class="setIcon">
+        <span class='setName'>设置</span>
+        <span class='setClose'>×</span>
+    </div>
+    <div class="setBody clearfix">
+        <div class="left">
+            <ul class='setContentList'>
+                <!-- <li>个人设置</li> -->
+                <li class='setActive'>系统设置</li>
+                <!-- <li>网络设置</li> -->
+            </ul>
+        </div>
+        <div class="right">
+            <!-- 				<div hidden class="setContent">
+                                <ul>
+                                    <li>
+                                        <div class="fl">111111111111</div>
+                                        <div class="fr">自动登录</div>
+                                    </li>
+                                    <li>
+                                        <div class="fl">自动登录</div>
+                                        <div class="fr"></div>
+                                    </li>
+                                    <li>
+                                        <div class="fl">截图快捷键</div>
+                                        <div class="fr"></div>
+                                    </li>
+                                    <li>
+                                        <div class="fl">发送快捷键</div>
+                                        <div class="fr"></div>
+                                    </li>
+                                </ul>
+                                <input id='setConfirm' type="button" value='确定'>
+                            </div> -->
+            <div class="setContent">
+                <ul>
+                    <!-- <li>
+                        <div class="fl">开机时自动启动</div>
+                        <div class="fr">
+                            <input id='check' type="checkbox" class="multi-switch" value="0" />
+                        </div>
+                    </li> -->
+                    <li>
+                        <div class="fl">自动登录</div>
+                        <div class="fr">
+                            <input id='check' type="checkbox" class="multi-switch autoLoginBtn" value="0"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fl">清除缓存</div>
+                        <div class="fr">
+                            <input id='clearCacahe' type="button" class="clearCacaheBtn" value="清除缓存"/>
+                        </div>
+                    </li>
+                    <!--<li>-->
+                        <!--<div class="fl">截图快捷键</div>-->
+                        <!--<div class="fr">-->
+                            <!--<input id='screenshot' class='input' type="text" value="Alt + Shift + A">-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <li>
+                        <div class="fl">发送快捷键</div>
+                        <div class="fr">
+                            <input id='sendKey' class='input' type="text" readonly="true" value="Enter">
+                        </div>
+                    </li>
+                </ul>
+                <!-- <input id='setConfirm' type="button" value='确定'> -->
+            </div>
+            <!--
+                            <div hidden class="setContent">
+                                <ul>
+                                    <li>
+                                        <div class="fl">3333333333</div>
+                                        <div class="fr">自动登录</div>
+                                    </li>
+                                    <li>
+                                        <div class="fl">自动登录</div>
+                                        <div class="fr"></div>
+                                    </li>
+                                    <li>
+                                        <div class="fl">截图快捷键</div>
+                                        <div class="fr"></div>
+                                    </li>
+                                    <li>
+                                        <div class="fl">发送快捷键</div>
+                                        <div class="fr"></div>
+                                    </li>
+                                </ul>
+                                <input id='setConfirm' type="button" value='确定'>
+
+                            </div> -->
+        </div>
+    </div>
+</div>
+<!-- 显示图片 -->
+<div hidden class="body_mask"></div>
+
+<!-- 警告窗 -->
+<div hidden class="alertBox">
+    <div class="alertBoxTitle clearfix">
+        <p>提示</p>
+        <span class='alertBoxClose'>×</span>
+    </div>
+    <div class="alertBoxbody clearfix">
+        <p>您确定要这样吗？</p>
+    </div>
+    <div class="alertBoxFooter clearfix">
+        <input class='btnCancel' type="button" value='取消'>
+        <input class="btnConfirm" type="button" value='确定'>
+    </div>
+</div>
+
+
+<!-- 注销 -->
+<div hidden class="logout">
+    <div class="logoutTitle clearfix">
+        <p>注销</p>
+        <span class='logoutClose'>×</span>
+    </div>
+    <div class="logoutbody clearfix">
+        <p>您确定要注销当前账户吗？</p>
+    </div>
+    <div class="logoutFooter clearfix">
+        <input class='btnCancel' type="button" value='取消'>
+        <input class="btnConfirm" type="button" value='确定'>
+    </div>
+</div>
+
+<!-- 退出 -->
+<div hidden class="quit">
+    <div class="quitTitle clearfix">
+        <p>关闭</p>
+        <span class='quitClose'>×</span>
+    </div>
+    <div class="quitbody clearfix">
+        <p>您确定要退出吗？</p>
+    </div>
+    <div class="quitFooter clearfix">
+        <input class='btnCancel' type="button" value='取消'>
+        <input class="btnConfirm" type="button" value='确定'>
+    </div>
+</div>
+
+
+<!-- 快捷键被占用 -->
+<div hidden class="hotKeyOccupied">
+    <div class="hotKeyOccupiedTitle clearfix">
+        <p>截图快捷键被占用</p>
+        <span class='hotKeyOccupiedClose'>×</span>
+    </div>
+    <div class="hotKeyOccupiedbody clearfix">
+        <p>是否前往设置修改截图快捷键？</p>
+    </div>
+    <div class="hotKeyOccupiedFooter clearfix">
+        <input class='btnCancel' type="button" value='取消'>
+        <input class="btnConfirm" type="button" value='确定'>
+    </div>
+</div>
+
+<!-- 聊天显示大图 -->
+<div hidden class="HDImgBox">
+    <span class='closeHDImg'><b class="imgClose"></b></span>
+    <img draggable="false" src="" class="HDImg">
+</div>
+
+
+<!-- loader打开加载界面 -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <div class="load_title">正在加载...</div>
+</div>
+
+<!-- 建立群聊天 -->
+<div class="creatGpChat">
+    <div class="gpChatTitle">
+        添加新的群组聊天
+        <span class="closeGpChat">×</span>
+    </div>
+    <div class="gpChatbody clearfix">
+        <div class="left">
+            <!-- <p class='search'>搜索</p>
+            <input type="text" class="gpInput"> -->
+            <p class='newGpName'>群名称</p>
+            <input type="text" class="gpInput">
+            <p class='newGpNotice'>群公告</p>
+            <input type="text" class="gpInput">
+            <p>群成员</p>
+            <div class="gpMember clearfix">
+            </div>
+        </div>
+        <div class="right">
+            <p class='pick'>选择群成员</p>
+            <div class="choosePerson">
+                <div class="csTitle">
+                    <!--<div class='titleImg'>-->
+                    <!--<img draggable="false" src="dist/imgs/index/avatar_demo.png">-->
+                    <!--</div>-->
+                    <span>组织架构</span>
+                </div>
+                <ul class="orgList orgList-create"></ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="gpFooter">
+        <input id='addGpChat' type="button" value='确定' class='btn'>
+    </div>
+</div>
+<!-- 发送截图 -->
+<div hidden class="shortCutSending">
+    <div class="shortCutSendingTitle clearfix">
+        <p>发送截图</p>
+        <span class='shortCutSendingClose'>×</span>
+    </div>
+    <div class="shortCutSendingbody clearfix">
+        <img class="shortCutImg" src="" alt=""/>
+    </div>
+    <div class="shortCutSendingFooter clearfix">
+        <input class='btnCancel' type="button" value='取消'>
+        <input class="btnConfirm" type="button" value='确定'>
+    </div>
+</div>
+
+<!--会话列表右键显示置顶和删除-->
+<ul class="chatsOption">
+    <li class="chatOperation cancelTop">取消置顶</li>
+    <li class="chatOperation setTop">置顶</li>
+    <li class="chatOperation delSession">删除聊天</li>
+</ul>
+
+<!--消息发送中 模板-->
+<div class="sk-fading-circle " id="loadingCircle">
+    <div class="sk-circle1 sk-circle"></div>
+    <div class="sk-circle2 sk-circle"></div>
+    <div class="sk-circle3 sk-circle"></div>
+    <div class="sk-circle4 sk-circle"></div>
+    <div class="sk-circle5 sk-circle"></div>
+    <div class="sk-circle6 sk-circle"></div>
+    <div class="sk-circle7 sk-circle"></div>
+    <div class="sk-circle8 sk-circle"></div>
+    <div class="sk-circle9 sk-circle"></div>
+    <div class="sk-circle10 sk-circle"></div>
+    <div class="sk-circle11 sk-circle"></div>
+    <div class="sk-circle12 sk-circle"></div>
+</div>
+
+<!--应用连接状态-->
+<div class="IM_Status">
+    <span class="disConnected"></span>
+    <span class="connecting">正在重连</span>
+</div>
+
+
+<!--添加删除群组人员-->
+<div class="addOrDelMemberWrap">
+    <div class="addOrDelMemberContent">
+        <div class="operTitle"><span class="addOrDelMemberTitle">添加/删除人员</span><span class="closeEditGpMember">×</span></div>
+        <ul class='personForSelect addGpMember orgList orgList-addGpMember'>
+            <li class="selectItem">
+                <div class="leftAvatar">
+                    <img src="dist/imgs/index/contact/person.png" alt="">
+                    <div class="personName">人力专员</div>
+                </div>
+                <div class="rightCheckbox">
+                    <input type="checkbox" id="select_3" class="personCheckbox"/>
+                    <label for="select_3"></label>
+                </div>
+            </li>
+        </ul>
+        <div class="personForSelected">
+            <div class="selectedTitle">已选中的人员</div>
+            <ul class="selectedMembers">
+
+            </ul>
+            <input type="button" class="btnConfirm" value="确定" />
+        </div>
+    </div>
+</div>
+
+<!-- 消息提示窗 -->
+<div class="infoWindow">
+    <span class="infoText">撤回失败！</span>
+</div>
+
+
+<script type="text/javascript" src='src/js/base64.js'></script>
+<script type="text/javascript" src='src/js/md5.js'></script>
+<script type="text/javascript" src='src/js/jquery.min.js'></script>
+<script type="text/javascript" src='src/js/qqFace.js'></script>
+<script type="text/javascript" src="src/js/public.js"></script>
+<!-- 更改数据库js文件 -->
+<script type="text/javascript" src='src/js/rundb.js'></script>
+<!-- 即时通讯的js文件 -->
+
+<script type="text/javascript" src="src/js/createChat.js"></script>
+
+<script type="text/javascript" src='src/js/renderChat.js'></script>
+
+<script type="text/javascript" src='src/js/render.js'></script>
+<script type="text/javascript" src='src/js/addGpChat.js'></script>
+<script type="text/javascript" src='src/js/strophe.js'></script>
+<script type="text/javascript" src='src/js/basic.js'></script>
+<script type="text/javascript" src='src/js/jquery.photo.gallery.js'></script>
+<script type="text/javascript" src='src/js/index.js'></script>
+
+
+<!-- 开关按钮js -->
+<script src="src/js/multi-switch.js"></script>
+<!-- <script src="src/js/database.js"></script> -->
+
+
+<script type="text/javascript">
+    // 等待所有加载
+    $(window).load(function () {
+        $('body').addClass('loaded');
+        $('#loader-wrapper .load_title').remove();
+    });
+    /*多选开关*/
+    $(document).ready(function () {
+        $('.multi-switch').multiSwitch();
+    });
+
+    $(function () {
+        $("body").on("click", "#avatar", function () {
+            $(".myInfo").show();
+        });
+    })
+</script>
+</body>
+</html>
